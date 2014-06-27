@@ -1,7 +1,7 @@
 ## Customer Management - Laravel
 
 
-This application facilitates user sing up, login and then the user can create/manage customers from the control panel.
+This application facilitates user sign up, login and then the user can create/manage customers from the control panel.
 
 
 ##Requirements
