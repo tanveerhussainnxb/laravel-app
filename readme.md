@@ -7,7 +7,6 @@ This application is facilitated user to sing up, login and then can manage custo
 ##Requirements
 
 	PHP >= 5.4.0
-	MCrypt PHP Extension
 
 ##How to install
 ### Step 1: Get the code
