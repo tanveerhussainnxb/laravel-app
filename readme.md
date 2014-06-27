@@ -1,25 +1,59 @@
-## Laravel PHP Framework
+## Laravel 4 Bootstrap Starter Site
 
-[![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
-[![Total Downloads](https://poser.pugx.org/laravel/framework/downloads.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Stable Version](https://poser.pugx.org/laravel/framework/v/stable.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Unstable Version](https://poser.pugx.org/laravel/framework/v/unstable.svg)](https://packagist.org/packages/laravel/framework)
-[![License](https://poser.pugx.org/laravel/framework/license.svg)](https://packagist.org/packages/laravel/framework)
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as authentication, routing, sessions, and caching.
+This application is facilitated user to sing up, login and then can manage customers from his control panel.
 
-Laravel aims to make the development process a pleasing one for the developer without sacrificing application functionality. Happy developers make the best code. To this end, we've attempted to combine the very best of what we have seen in other web frameworks, including frameworks implemented in other languages, such as Ruby on Rails, ASP.NET MVC, and Sinatra.
 
-Laravel is accessible, yet powerful, providing powerful tools needed for large, robust applications. A superb inversion of control container, expressive migration system, and tightly integrated unit testing support give you the tools you need to build any application with which you are tasked.
+##Requirements
 
-## Official Documentation
+	PHP >= 5.4.0
+	MCrypt PHP Extension
 
-Documentation for the entire framework can be found on the [Laravel website](http://laravel.com/docs).
+##How to install
+### Step 1: Get the code
+#### Option 1: Git Clone
 
-### Contributing To Laravel
+	git clone git://github.com/tanveerhussainnxb/laravel-app.git laravel
 
-**All issues and pull requests should be filed on the [laravel/framework](http://github.com/laravel/framework) repository.**
+#### Option 2: Download the repository
 
-### License
+    https://github.com/tanveerhussainnxb/laravel-app/archive/master.zip
 
-The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
+### Step 2: Use Composer to install dependencies
+#### Option 1: Composer is not installed globally
+
+    cd laravel
+	curl -s http://getcomposer.org/installer | php
+	php composer.phar install --dev
+#### Option 2: Composer is installed globally
+
+    cd laravel
+	composer install --dev
+
+If you haven't already, you might want to make [composer be installed globally](http://andrewelkins.com/programming/php/setting-up-composer-globally-for-laravel-4/) for future ease of use.
+
+Please note the use of the `--dev` flag.
+
+Some packages used to preprocess and minify assests are required on the development environment.
+
+When you deploy your project on a production environment you will want to upload the ***composer.lock*** file used on the development environment and only run `php composer.phar install` on the production server.
+
+This will skip the development packages and ensure the version of the packages installed on the production server match those you developped on.
+
+NEVER run `php composer.phar update` on your production server.
+
+### Step 3: Configure Environments
+
+Open ***bootstrap/start.php*** and edit the following lines to match your settings. You want to be using your machine name in Windows and your hostname in OS X and Linux (type `hostname` in terminal). Using the machine name will allow the `php artisan` command to use the right configuration files as well.
+
+    $env = $app->detectEnvironment(array(
+
+        'local' => array('your-local-machine-name'),
+        'staging' => array('your-staging-machine-name'),
+        'production' => array('your-production-machine-name'),
+
+    ));
+	
+### Step 4: Configure Database
+
+Now that you have the environment configured, you need to create a database configuration for it. Please open the file ***app/config/database.php*** or ***app/config/local*** and edit it to match your local database settings.	
