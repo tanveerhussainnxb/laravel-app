@@ -57,3 +57,17 @@ Open ***bootstrap/start.php*** and edit the following lines to match your settin
 ### Step 4: Configure Database
 
 Now that you have the environment configured, you need to create a database configuration for it. Please open the file ***app/config/database.php*** or ***app/config/local*** and edit it to match your local database settings.	
+
+### Step 5: Populate Database
+Run these commands to create and populate Users table:
+
+	php artisan migrate
+	php artisan db:seed
+	
+### Step 6: Browse Application
+Now you can easily browse the application according to configuration setting.
+
+## License
+
+This is free software distributed under the terms of the MIT license
+
