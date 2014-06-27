@@ -1,4 +1,4 @@
-## Laravel 4 Bootstrap Starter Site
+## Customer Module - Laravel
 
 
 This application is facilitated user to sing up, login and then can manage customers from his control panel.
