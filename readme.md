@@ -1,4 +1,4 @@
-## Customer Module - Laravel
+## Customer Management - Laravel
 
 
 This application is facilitated user to sing up, login and then can manage customers from his control panel.
